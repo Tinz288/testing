@@ -1,19 +1,17 @@
-const login = require("./login");
+const { checkLogin } = require("./login");
 
-describe("Login Function", () => {
-    test("Đăng nhập đúng", () => {
-        expect(login("admin", "123")).toBe(true);
-    });
+test("Đăng nhập đúng", () => {
+    expect(checkLogin("admin", "123")).toBe(true);
+});
 
-    test("Sai username", () => {
-        expect(login("user", "123")).toBe(false);
-    });
+test("Sai username", () => {
+    expect(checkLogin("user", "123")).toBe(false);
+});
 
-    test("Sai password", () => {
-        expect(login("admin", "456")).toBe(false);
-    });
+test("Sai password", () => {
+    expect(checkLogin("admin", "456")).toBe(false);
+});
 
-    test("Sai cả username và password", () => {
-        expect(login("user", "456")).toBe(false);
-    });
+test("Sai cả username và password", () => {
+    expect(checkLogin("user", "456")).toBe(false);
 });
