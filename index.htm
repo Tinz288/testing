@@ -1,3 +1,5 @@
+index.html
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -9,10 +11,12 @@
     <h2>Form Đăng Nhập</h2>
 
     <form id="loginForm">
-        <input type="text" id="username" placeholder="Tên đăng nhập" required>
+        <label>Username:</label>
+        <input type="text" id="username" required>
         <br><br>
 
-        <input type="password" id="password" placeholder="Mật khẩu" required>
+        <label>Password:</label>
+        <input type="password" id="password" required>
         <br><br>
 
         <button type="submit">Đăng nhập</button>
@@ -21,18 +25,5 @@
     <p id="result"></p>
 
     <script src="login.js"></script>
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(e) {
-            e.preventDefault();
-
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            const result = login(username, password);
-
-            document.getElementById("result").textContent =
-                result ? "Đăng nhập thành công!" : "Sai tài khoản hoặc mật khẩu!";
-        });
-    </script>
 </body>
 </html>
